@@ -20,6 +20,13 @@
  */
 define('GELATO_VERSION', '1.0.0');
 
+/** 
+ * Define __DIR__ constant for PHP 5.2.x
+ */
+if ( ! defined('__DIR__')) {
+    define('__DIR__', dirname(__FILE__));
+}
+
 /**
  * Display Gelato Errors or not ?
  */
