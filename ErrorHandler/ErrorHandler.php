@@ -266,10 +266,7 @@ class ErrorHandler
             // Determine error type
             if ($exception instanceof ErrorException) {
                 $error['type'] = 'ErrorException: ';
-
-                $codes = ErrorHandler::$levels;
-
-                $error['type'] .= in_array($error['code'], array_keys($codes)) ? $codes[$error['code']] : 'Unknown Error';
+                $error['type'] .= in_array($error['code'], array_keys(ErrorHandler::$levels)) ? ErrorHandler::$levels[$error['code']] : 'Unknown Error';
             } else {
                 $error['type'] = get_class($exception);
             }
