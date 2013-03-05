@@ -194,7 +194,7 @@ class ErrorHandler
             if (isset($entry['file'])) {
                 $location['file'] = $entry['file'];
                 $location['line'] = $entry['line'];
-                $location['code'] = static::highlightCode($entry['file'], $entry['line']);
+                $location['code'] = self::highlightCode($entry['file'], $entry['line']);
             }
 
             /**
@@ -257,11 +257,11 @@ class ErrorHandler
                     E_NOTICE            => 'Notice',
                     E_WARNING           => 'Warning',
                     E_RECOVERABLE_ERROR => 'Recoverable Error',
-                    /*E_DEPRECATED        => 'Deprecated',*/
+                    /*E_DEPRECATED        => 'Deprecated',*/ /* PHP 5.3 only */
                     E_USER_NOTICE       => 'Notice',
                     E_USER_WARNING      => 'Warning',
                     E_USER_ERROR        => 'Error',
-                    /*E_USER_DEPRECATED   => 'Deprecated'*/
+                    /*E_USER_DEPRECATED   => 'Deprecated'*/ /* PHP 5.3 only */
                 );
 
                 $error['type'] .= in_array($error['code'], array_keys($codes)) ? $codes[$error['code']] : 'Unknown Error';
@@ -283,8 +283,8 @@ class ErrorHandler
                     $error['backtrace'] = array_slice($error['backtrace'], 1); //Remove call to error handler from backtrace
                 }
 
-                $error['backtrace']   = static::formatBacktrace($error['backtrace']);
-                $error['highlighted'] = static::highlightCode($error['file'], $error['line']);
+                $error['backtrace']   = self::formatBacktrace($error['backtrace']);
+                $error['highlighted'] = self::highlightCode($error['file'], $error['line']);
 
                 Response::status(500);
                 include 'Resources/Views/Errors/exception.php';
