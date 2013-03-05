@@ -18,7 +18,7 @@
 /**
  * The version of Gelato
  */
-define('GELATO_VERSION', '1.0.0');
+define('GELATO_VERSION', '1.0.1');
 
 /** 
  * Define __DIR__ constant for PHP 5.2.x
