@@ -35,10 +35,10 @@ if ( ! defined('GELATO_DEVELOPMENT')) {
 }
 
 /**
- * Use Gelato Autoloader or not ?
+ * Use Gelato Class Loader or not ?
  */
-if ( ! defined('GELATO_AUTOLOADER')) {
-    define('GELATO_AUTOLOADER', true);
+if ( ! defined('GELATO_CLASS_LOADER')) {
+    define('GELATO_CLASS_LOADER', true);
 }
 
 /**
@@ -117,8 +117,8 @@ ClassLoader::mapClasses(array(
 ));
 
 /**
- * Register Gelato Autoloader
+ * Register Gelato Class Loader
  */
-if (GELATO_AUTOLOADER) {
-    spl_autoload_register('ClassLoader::load');
+if (GELATO_CLASS_LOADER) {
+    ClassLoader::register();
 }
