@@ -18,7 +18,7 @@
 /**
  * The version of Gelato
  */
-define('GELATO_VERSION', '1.0.1');
+define('GELATO_VERSION', '1.0.2');
 
 /** 
  * Define __DIR__ constant for PHP 5.2.x
@@ -66,12 +66,12 @@ require_once __DIR__ . '/ErrorHandler/ErrorHandler.php';
 /**
  * Set Error Handler
  */
-set_error_handler('ErrorHandler::errorHandler');
+set_error_handler('ErrorHandler::error');
 
 /**
  * Set Fatal Error Handler
  */
-register_shutdown_function('ErrorHandler::fatalErrorHandler');
+register_shutdown_function('ErrorHandler::fatal');
 
 /**
  * Set Exception Handler
