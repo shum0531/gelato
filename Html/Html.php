@@ -281,6 +281,21 @@ class Html
         return '<img'.Html::attributes($attributes).' />';
     }    
     
+	/**
+	 * Obfuscate an e-mail address to prevent spam-bots from sniffing it.
+     *
+     *  <code>
+     *  	echo Html::email('gelato@monstra.org');
+     * 	</code>
+     *
+	 * @param  string  $email
+	 * @return string
+	 */
+	 public static function email($email)
+	 {
+	     return str_replace('@', '&#64;', Html::obfuscate($email));
+	 }
+    
     /**
 	 * Obfuscate a string to prevent spam-bots from sniffing it.
 	 *
@@ -288,7 +303,7 @@ class Html
      * letter to its entity or hexadecimal representation, keeping a
      * bot from sniffing the randomly obfuscated letters.
      *
-     *    <code>
+     *  <code>
      *  	echo Html::obfuscate('gelato@monstra.org');
      * 	</code>
      *
