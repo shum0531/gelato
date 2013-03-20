@@ -28,6 +28,13 @@ class Html
         'accept', 'tabindex', 'accesskey', 'alt', 'title', 'class',
         'style', 'selected', 'checked', 'readonly', 'disabled',
     );
+	
+	/**
+	 * The registered custom macros.
+	 *
+	 * @var array
+	 */
+	public static $macros = array();
 
     /**
      * Protected constructor since this is a static class.
