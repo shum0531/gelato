@@ -183,7 +183,6 @@ class Html
      *	</code>
      *
      * @param  string  $direction Arrow direction [up,down,left,right]
-     * @param  boolean $render    If this option is true then render html object else return it
      * @return string
      */
     public static function arrow($direction)
@@ -270,8 +269,8 @@ class Html
      *  	echo Html::image('data/files/pic1.jpg');
      * 	</code>
      *
-     * @param array  $attributes Image attributes
      * @param string $file       File
+     * @param array  $attributes Image attributes
      * @uses  Url::base
      * @return string
      */

@@ -20,6 +20,8 @@ class MinifyCSS
 {
 
     /**
+     * Options 
+     * 
      * @var array
      */
     protected $_options = null;

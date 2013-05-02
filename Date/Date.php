@@ -180,8 +180,8 @@ class Date
      *      $years = Date::years();
      *  </code>
      *
-     * @param  integer $long  Start value
-     * @param  integer $start End value
+     * @param  integer $start  Start value
+     * @param  integer $end    End value
      * @return array
      */
     public static function years($start = 1980, $end = 2024)

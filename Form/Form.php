@@ -214,7 +214,7 @@ class Form
      *  </code>
      *
      * @param string  $name       Input name
-     * @param string  $input      Input value
+     * @param string  $value      Input value
      * @param boolean $checked    Checked status
      * @param array   $attributes HTML attributes
      * @uses   Form::input
@@ -344,18 +344,18 @@ class Form
      *      echo Form::button('save', 'Save Profile', array('type' => 'submit'));
      *  </code>
      *
-     * @param string $name       Input name
-     * @param string $value      Input value
+     * @param string $name       Button name
+     * @param string $value      Button value
      * @param array  $attributes HTML attributes
      * @uses   Html::attributes
      * @return string
      */
-    public static function button($name, $body, array $attributes = null)
+    public static function button($name, $value, array $attributes = null)
     {
         // Set the input name
         $attributes['name'] = $name;
 
-        return '<button'.Html::attributes($attributes).'>'.$body.'</button>';
+        return '<button'.Html::attributes($attributes).'>'.$value.'</button>';
     }
 
     /**

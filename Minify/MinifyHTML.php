@@ -24,7 +24,7 @@ class MinifyHTML
      *      echo MinifyHTML::process($html);
      *  </code>
      *
-     * @param  string $buffer html
+     * @param  string $html Html content
      * @return string
      */
     public static function process($html)

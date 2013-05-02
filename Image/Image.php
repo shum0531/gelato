@@ -453,9 +453,9 @@ class Image
     /**
      * Creates a color based on a hex value.
      *
-     * @param  string  $hex       Hex code of the color
-     * @param  integer $alpha     Alpha. Default is 100
-     * @param  boolean $returnRGB FALSE returns a color identifier, TRUE returns a RGB array
+     * @param  string  $hex        Hex code of the color
+     * @param  integer $alpha      Alpha. Default is 100
+     * @param  boolean $return_rgb FALSE returns a color identifier, TRUE returns a RGB array
      * @return integer
      */
     protected function createColor($hex, $alpha = 100, $return_rgb = false)
@@ -603,7 +603,7 @@ class Image
      *      Image::factory('original.png')->save('edited.png');
      *  </code>
      *
-     * @param  string  $dest    Desitination location of the file
+     * @param  string  $file    Desitination location of the file
      * @param  integer $quality Image quality. Default is 100
      * @return Image
      */
