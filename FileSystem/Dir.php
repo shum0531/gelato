@@ -203,4 +203,28 @@ class Dir
         return $total_size;
     }
 
+    /**
+     * Rename directory
+     *
+     *  <code>
+     *      Dir::rename('dirname1', 'dirname2');
+     *  </code>
+     *
+     * @param string $from Original directory location
+     * @param string $to   Desitination location of the directory
+     * @resturn boolean
+     */
+    public static function rename($from, $to)
+    {
+        // Redefine vars
+        $from = (string) $from;
+        $to = (string) $to;
+
+        // If dir exists $to than rename it
+        if ( ! Dir::exists($to)) return rename($from, $to);
+
+        // Else return false
+        return false;
+    }
+
 }
