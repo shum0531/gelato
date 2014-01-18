@@ -9,7 +9,7 @@
  * @package     Gelato
  *
  * @author      Romanenko Sergey / Awilum <awilum@msn.com>
- * @copyright   2012-2013 Romanenko Sergey / Awilum <awilum@msn.com>
+ * @copyright   2012-2014 Romanenko Sergey / Awilum <awilum@msn.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -141,7 +141,7 @@ class Form
             $attributes['type'] = 'text';
         }
 
-        return '<input'.Html::attributes($attributes).' />';
+        return '<input'.Html::attributes($attributes).'>';
     }
 
     /**
@@ -214,7 +214,7 @@ class Form
      *  </code>
      *
      * @param string  $name       Input name
-     * @param string  $value      Input value
+     * @param string  $input      Input value
      * @param boolean $checked    Checked status
      * @param array   $attributes HTML attributes
      * @uses   Form::input
@@ -344,18 +344,18 @@ class Form
      *      echo Form::button('save', 'Save Profile', array('type' => 'submit'));
      *  </code>
      *
-     * @param string $name       Button name
-     * @param string $value      Button value
+     * @param string $name       Input name
+     * @param string $value      Input value
      * @param array  $attributes HTML attributes
      * @uses   Html::attributes
      * @return string
      */
-    public static function button($name, $value, array $attributes = null)
+    public static function button($name, $body, array $attributes = null)
     {
         // Set the input name
         $attributes['name'] = $name;
 
-        return '<button'.Html::attributes($attributes).'>'.$value.'</button>';
+        return '<button'.Html::attributes($attributes).'>'.$body.'</button>';
     }
 
     /**
