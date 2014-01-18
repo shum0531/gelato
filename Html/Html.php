@@ -9,7 +9,7 @@
  * @package     Gelato
  *
  * @author      Romanenko Sergey / Awilum <awilum@msn.com>
- * @copyright   2012-2013 Romanenko Sergey / Awilum <awilum@msn.com>
+ * @copyright   2012-2014 Romanenko Sergey / Awilum <awilum@msn.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -157,7 +157,7 @@ class Html
      */
     public static function br($num = 1)
     {
-        return str_repeat("<br />",(int) $num);
+        return str_repeat("<br>",(int) $num);
     }
 
     /**
@@ -183,6 +183,7 @@ class Html
      *	</code>
      *
      * @param  string  $direction Arrow direction [up,down,left,right]
+     * @param  boolean $render    If this option is true then render html object else return it
      * @return string
      */
     public static function arrow($direction)
@@ -269,8 +270,8 @@ class Html
      *  	echo Html::image('data/files/pic1.jpg');
      * 	</code>
      *
-     * @param string $file       File
      * @param array  $attributes Image attributes
+     * @param string $file       File
      * @uses  Url::base
      * @return string
      */
@@ -284,7 +285,7 @@ class Html
         $attributes['src'] = $file;
         $attributes['alt'] = (isset($attributes['alt'])) ? $attributes['alt'] : pathinfo($file, PATHINFO_FILENAME);
 
-        return '<img'.Html::attributes($attributes).' />';
+        return '<img'.Html::attributes($attributes).'>';
     }    
     
 	/**
