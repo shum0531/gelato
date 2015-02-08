@@ -86,7 +86,7 @@ class Token
      */
     public static function check($token)
     {
-        return Token::token() === $token;
+        return Token::generate() === $token;
     }
 
 }
